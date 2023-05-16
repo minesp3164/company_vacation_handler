@@ -7,12 +7,12 @@ class User(models.Model):
 
 
 class Role(models.Model):
-    role_id = models.ForeignKey(User,primary_key=True,)
-    role_name = models.Charfield(max_length=100)
+    role_id = models.ForeignKey(User, primary_key=True, on_delete=models.CASCADE)
+    role_name = models.CharField(max_length=100)
 
 
 class Vacation(models.Model):
-    vacation_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    vacation_id = models.ForeignKey(User, on_delete=models.CASCADE)
     vac_start = models.DateTimeField()
     vac_end = models.DateTimeField()
 
