@@ -1,10 +1,8 @@
 import os
-from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-ROOT_DIR = os.path.dirname(BASE_DIR)
-SECRETS_PATH = os.path.join(ROOT_DIR, 'secrets.json')
-
+SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -55,8 +53,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # mysqlclient librarly 설치
         'NAME': 'company',
-        'USER': 'root',
-        'PASSWORD': 'dlgusehd', # mariaDB 설치 시 입력한 root 비밀번호 입력
+        'USER': os.getenv('DATABASES_USER'),
+        'PASSWORD':os.getenv('DATABASES_PASSWORD'), # mariaDB 설치 시 입력한 root 비밀번호 입력
         'HOST': 'localhost',
         'PORT': ''
     }

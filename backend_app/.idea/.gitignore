@@ -1,5 +1,6 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-secrets.json
 *.pyc
+.env
+__pycache__/
