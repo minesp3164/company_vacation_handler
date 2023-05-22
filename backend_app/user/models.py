@@ -7,7 +7,7 @@ class Company(models.Model):
 
 class User(models.Model):
     com_id = models.ForeignKey(Company, primary_key=True, on_delete=models.CASCADE)
-    email = models.CharField(max_length=100)
+    user_name = models.CharField(max_length=11)
     password = models.CharField(max_length=100)
 
 
